@@ -1,6 +1,9 @@
+mod palette;
+
 use bevy::ecs::{Res, Query};
 use bevy::prelude::{Time, Commands, ResMut, Assets, Mesh, StandardMaterial, PbrBundle, shape, Color, Transform, Vec3};
 use rand::Rng;
+use palette::*;
 
 pub struct Spawner {
     next_spawn: f32
@@ -20,11 +23,10 @@ pub fn cube_spawner(time: Res<Time>, cmds: &mut Commands, mut meshes: ResMut<Ass
             let mut rng = rand::thread_rng();
             cmds.spawn(PbrBundle {
                 mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
-                material: mat.add(Color::rgb(0.5, 0.7, 0.6).into()),
+                material: mat.add(Palette::random().into()),
                 transform: Transform::from_translation(Vec3::new(rng.gen_range(-5.0, 5.0), 0.0, 0.0)),
                 ..Default::default()
             });
         }
     }
 }
-

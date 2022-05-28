@@ -24,7 +24,7 @@ That would imply:
 
 # Plans
 
-- commit 1: Display a square
+- commit 1: Display a square which is the player
 - commit 2: Move that square
 - commit 3: Prevent that square from escaping the screen
 - commit 4: Spawn a target
@@ -33,3 +33,23 @@ That would imply:
 - commit 7: Despawn the target if the player collides with it
 - commit 8: Display a counter of collected targets
 - commit 9: Lose if you do not reach the target in time
+
+# Bumps
+
+### Bevy's [example](https://github.com/bevyengine/bevy/blob/latest/examples/2d/move_sprite.rs) seems to be bundling the sprite into the entity.
+
+Which is something I don't really like, I don't want to deal with that coupling.
+
+I'd rather have the system figure out how it wants to render the entity.
+
+# Compile time tips
+
+### Enable Bevy's Dynamic Linking Feature
+
+This is the most impactful compilation time decrease! 
+
+If bevy is a dependency you can compile the binary with the "dynamic" feature flag (enables dynamic linking).
+
+`cargo run --features bevy/dynamic`
+
+[more here](https://bevy-cheatbook.github.io/pitfalls/performance.html)

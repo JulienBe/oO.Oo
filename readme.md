@@ -24,7 +24,8 @@ That would imply:
 
 # Plans
 
-- commit 1: Display a square which is the player
+- commit 1: Display a square
+- commit 1.5: Display a square which is the player
 - commit 2: Move that square
 - commit 3: Prevent that square from escaping the screen
 - commit 4: Spawn a target
@@ -41,6 +42,8 @@ That would imply:
 Which is something I don't really like, I don't want to deal with that coupling.
 
 I'd rather have the system figure out how it wants to render the entity.
+
+Pointer?: [bevy pixels](https://github.com/dtcristo/bevy_pixels)
 
 # Compile time tips
 

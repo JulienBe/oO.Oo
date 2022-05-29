@@ -2,11 +2,9 @@
 name = "nanowar"
 version = "0.1.0"
 authors = ["JulienBe"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy", rev = "d021a3c3748ca921fa7c0aa94bfb09e6f30090d0" }
-rand = "0.7.3"
-image = "0.23.14"
+bevy = "0.7.0"

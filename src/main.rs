@@ -1,6 +1,9 @@
 use bevy::DefaultPlugins;
 use bevy::prelude::*;
 
+#[derive(Component)]
+struct Player;
+
 fn main() {
     App::new()
         .insert_resource(Msaa { samples: 4 })
@@ -24,7 +27,8 @@ fn add_player(mut commands: Commands, mut meshes: ResMut<Assets<Mesh>>, mut mate
             material: materials.add(Color::rgb(0.8, 0.7, 0.6).into()),
             transform: Transform::from_xyz(1.5, 0.5, 1.5),
             ..default()
-        });
+        })
+        .insert(Player);
 }
 
 fn setup(mut commands: Commands) {
